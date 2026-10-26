@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use TSnooze in your work, please cite it using the metadata below."
+title: "TSnooze"
+version: 1.0.0
+authors:
+  - family-names: M003aad
+    given-names: ""
+license: AGPL-3.0-only
+url: "https://github.com/M003aad/DevEye"
+description: "Automatically suspends inactive tabs to save RAM and battery while keeping the tab visible and instantly reloadable when clicked."

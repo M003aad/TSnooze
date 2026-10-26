@@ -1,0 +1,92 @@
+:root {
+  --bg: #ffffff;
+  --card: #f4f5fb;
+  --text: #1f2230;
+  --muted: #6b7080;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --border: #dfe1ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1c27;
+    --card: #242736;
+    --text: #eceef7;
+    --muted: #9ba0b5;
+    --border: #353951;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 300px;
+  margin: 0;
+  padding: 16px;
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+h1 { font-size: 17px; margin: 0; }
+
+/* ON/OFF toggle switch */
+.switch { position: relative; width: 44px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; inset: 0; cursor: pointer;
+  background: #b9bccd; border-radius: 24px; transition: background .2s;
+}
+.slider::before {
+  content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px;
+  background: #fff; border-radius: 50%; transition: transform .2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+.switch input:checked + .slider { background: var(--accent); }
+.switch input:checked + .slider::before { transform: translateX(20px); }
+
+/* Memory card */
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.stat-value { font-size: 17px; font-weight: 600; color: var(--accent); }
+.stat-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; margin-bottom: 14px;
+}
+select {
+  padding: 6px 8px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  font: inherit;
+}
+
+.btn {
+  display: block; width: 100%; padding: 10px; margin-bottom: 8px;
+  border: none; border-radius: 10px; cursor: pointer;
+  background: var(--accent); color: #fff; font: inherit; font-weight: 600;
+  transition: background .15s;
+}
+.btn:hover:not(:disabled) { background: var(--accent-hover); }
+.btn:disabled { opacity: .6; cursor: default; }
+.btn.secondary {
+  background: transparent; color: var(--accent); border: 1px solid var(--accent);
+}
+.btn.secondary:hover:not(:disabled) { background: var(--card); }
+
+#status { min-height: 18px; margin: 4px 0; font-size: 12px; color: var(--muted); text-align: center; }
+#options { display: block; text-align: center; font-size: 12px; color: var(--accent); text-decoration: none; }
+#options:hover { text-decoration: underline; }

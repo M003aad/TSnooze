@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "TSnooze – Auto Tab Suspender",
+  "version": "1.0.0",
+  "description": "Automatically suspends inactive tabs to save RAM and battery. Tabs keep their title and favicon and wake instantly when clicked.",
+  "minimum_chrome_version": "110",
+  "permissions": ["tabs", "alarms", "storage", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "TSnooze",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
